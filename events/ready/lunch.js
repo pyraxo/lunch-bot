@@ -6,7 +6,7 @@ module.exports = (bot) => {
   const channelId = process.env.FOOD_CHANNEL
   if (!channelId) return
 
-  schedule.scheduleJob('0 30 12 * * 1-5', async () => {
+  schedule.scheduleJob('0 0 4 * * 1-5', async () => {
     const places = await db.smembers('dio:food')
     if (!places.length) return
 
